@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+*{
+    font-style: roboto, arial;
+    background-color: #FFFFFF;
+}
+
+.padreLogin {
+  height: 150px;
+  padding:50px;
+  /*background: yellow;*/
+  color:#4b4c4d;
+  
+  /* IMPORTANTE */
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 300px;
+  vertical-align: middle;
+}
+
+.hijoLogin {
+  /* IMPORTANTE */
+  display: table-cell;
+  vertical-align: middle;
+  /*background: red;*/
+}
+
+.espacioLogin-bottom {
+  height: 150px;
+}
+
+.celdaLogin {
+  padding-bottom: 8px;
+}
+
+div.vertical-line{
+  width: 1px; /* Line width */
+  background-color: black; /* Line color */
+  height: 100%; /* Override in-line if you want specific height. */
+  float: left; /* Causes the line to float to left of content. 
+    You can instead use position:absolute or display:inline-block
+    if this fits better with your design */
+}
+
+.footer-basic {
+    padding:40px 0;
+    /*background-color:#FF5252;*/
+    color:#4b4c4d;
+  }
+  
+  .footer-basic ul {
+    /*background-color:#FF5252;*/
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    /*background-color:#FF5252;*/
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    /*background-color:#FF5252;*/
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+
+  .footer-basic .social {
+    /*background-color:#FF5252;*/
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    /*background-color:#FF5252;*/
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    /*background-color:#FF5252;*/
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    /*background-color:#FF5252;*/
+    padding-top: 15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+
+  #header{
+    background-color:#FF5252;
+    height: 10vh;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  #menubar, #colLogo{
+    background-color:#FF5252;
+    padding-top: 3px;
+  }
+
+  #esp{
+    height: 2vh;
+    width: 100%;
+  }
+  #rowCarrusel{
+    height: 68vh;
+    width: 100%;
+  }
+
+  #carrusel{
+    padding-top: 8vh;
+    height: 60vh;
+    width: 100%;
+  }
+
+  #contenidoAt{
+    height: 68vh;
+    width: 100%;
+  }
+
+  #rowCarruselAt{
+    height: 40vh;
+    width: 100%;
+  }
+
+  #carruselAt{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    height: 30vh;
+    width: 100%;
+  }
+
+  #descripcionAt{
+    height: 28vh;
+    width: 100%;
+  }
+
+  #descripcionAtencion{
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-top: 10vh;
+    padding-bottom: 4vh;
+    height: 20vh;
+    width: 100%;
+  }
+
+  #footer{
+    /*background-color:#FF5252;*/
+    height: 20vh;
+    width: 100%;
+  }
+
+  #logoMC{
+    height: 50px;
+    width: 100px;
+  }
+
+  #logoMCQ{
+    height: 20vh;
+    width: 100%;
+  }
+
+  #opciones{
+    height: 10vh;
+    width: 100%;
+  }
+
+  #atenciones{
+    height: 60vh;
+    width: 100%;
+  }
+
+  /* #atenciones{
+    height: 55vh;
+    width: 100%;
+  } */
+
+  /* #btnCargar{
+    height: 5vh;
+  } */
+
+  #at1, #at2{
+    padding-bottom: 10px;
+  }
+
+  #p1, #p2, #p3{
+    text-decoration: none;
+  }
+
+  #login{
+    height: 75vh;
+    width: 100%;
+  }
+
+  #loginModal,#contactoModal, #atencionModal{
+    background-color: transparent;
+  }
+
+  #btnFloatingW, #btnFloatingW:hover, #btnFloatingW:focus{
+    /* color: black; */
+    color: #9c9c9d;
+    background-color: transparent;
+    border-style: none;
+  }
+
+  #btnLog{
+    margin-top: 91.5px;
+  }
+  
