@@ -1,3 +1,5 @@
+{% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +9,9 @@
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'core/css/validaciones.css' %}"></script>
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">       
+    <script src="{% static 'js/validaciones.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">        -->
     <!-- <script src="../static/js/validaciones.js"></script> -->
     <title>Atención Realizada</title>
 

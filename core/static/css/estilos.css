@@ -5,6 +5,7 @@
     background-color: #FFFFFF;
 }
 
+
 .padreLogin {
   height: 150px;
   padding:50px;
@@ -218,7 +219,7 @@ div.vertical-line{
     width: 100%;
   }
 
-  #loginModal,#contactoModal, #atencionModal{
+  #loginModal, #contactoModal, #atencionModal, #registroModal{
     background-color: transparent;
   }
 
@@ -232,4 +233,3 @@ div.vertical-line{
   #btnLog{
     margin-top: 91.5px;
   }
-  

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from . import views
 from .views import index
 from .views import atenciones
 from .views import detalleTrabajo
@@ -13,9 +14,8 @@ urlpatterns = [
     # path('detalle-trabajo', views.detalleTrabajo, name="detalleTrabajo")
     
     path('admin/', admin.site.urls),
-    path('', index, name="index"),
-    path('/index/', index, name="index"),
-    path('/atenciones/', atenciones, name="atenciones"),
-    path('/detalle-trabajo/', detalleTrabajo, name="detalleTrabajo")
+    path('', views.index, name="index"),
+    path('index.html/', views.index, name="index"),
+    path('atenciones.html/', views.atenciones, name="atenciones"),
+    path('atenciones.html/detalleTrabajo.html/', views.detalleTrabajo, name="detalleTrabajo")
 ]
-

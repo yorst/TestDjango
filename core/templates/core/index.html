@@ -10,10 +10,10 @@
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'core/css/validaciones.css' %}"></script>
+    <script src="{% static 'js/validaciones.js' %}"></script>
     <!-- <script src="../static/js/validaciones.js"></script> -->
-    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">       
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">        -->
     <title>Inicio</title>
     <!-- {% bootstrap_javascript jquery='full' %} -->
 </head>
@@ -35,7 +35,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="atenciones.html">Nuestro trabajo</a>
@@ -162,7 +162,6 @@
           </div>
         </div>
 
-
         <!-- form contacto -->
         <div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -215,6 +214,12 @@
                 <li class="list-inline-item"><a href="#">Facebook</a></li>
                 <li class="list-inline-item"><a href="#">Acerca de Nosotros</a></li>
                 <li class="list-inline-item"><a href="#">Terminos y Condiciones</a></li>
+                <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+                <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                 <li class="list-inline-item">
                   <button type="button" id="btnFloatingW" class="btn btn-primary" data-toggle="modal" data-target="#contactoModal" data-whatever="@mdo">Formulario Contacto</button>
                 </li>
@@ -224,10 +229,10 @@
         </div>
     </div>
     {% bootstrap_javascript jquery='full' %}
-    <!-- <script src="../static/js/validaciones.js"></script>     -->
+    <script src="../static/js/validaciones.js"></script>
     <!-- <script src="../static/js/jquery-3.6.0.js"></script>
-    <script src="../static/js/popper.js"></script> 
-    <script src="../static/js/httpRequest.js"></script> -->
+    <script src="../static/js/popper.js"></script>  -->
+    <script src="../static/js/httpRequest.js"></script>
     <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script> -->
     <!-- <script src="../static/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
