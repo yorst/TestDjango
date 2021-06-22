@@ -18,7 +18,6 @@ class Usuario(models.Model):
 
 
 # MODELO CONTACTO
-
 class Contacto(models.Model):
     email = models.CharField(primary_key=True, max_length=50, verbose_name='Email contacto')
     nombre = models.CharField(max_length=50, verbose_name='Nombre contacto')
@@ -42,16 +41,22 @@ class Contacto(models.Model):
         return self.mensaje
 
 
+
+
 # MODELO ATENCIONES
 
 class Atencion(models.Model):
     titulo = models.CharField(primary_key=True, max_length=50, verbose_name='Titulo atencion')
     fecha = models.CharField(max_length=50, verbose_name='Fecha atencion')
     tipo_vehiculo = models.CharField(max_length=50, verbose_name='Tipo vehiculo atencion')
-    marca = models.CharField(max_length=50, verbose_name='Marca atencion')
-    modelo = models.CharField(max_length=50, verbose_name='Modelo atencion')
+    marca = models.CharField(null=True, blank=True, max_length=50, verbose_name='Marca atencion')
+    modelo = models.CharField(null=True, blank=True, max_length=50, verbose_name='Modelo atencion')
     tipo_atencion = models.CharField(max_length=50, verbose_name='Tipo atencion atencion')
     descripcion = models.CharField(max_length=50, verbose_name='Descripcion atencion')
+    # mecanico = models.CharField(max_length=50, verbose_name='Mecanico atencion')
+    # imagen = models.ImageField(verbose_name='Mecanico atencion')
+    #DEBERIA IR COMO FORANEA EMAIL DE USUARIO
+    #DEBERIA IR COMO FORANEA ID DE TRABAJADOR
 
     def __str__(self):
         return self.titulo
@@ -78,9 +83,8 @@ class Atencion(models.Model):
 # MODELO TRABAJADOR
 
 class Trabajador(models.Model):
-    rut = models.CharField(primary_key=True, max_length=50, verbose_name='Rut trabajador')
     nombre = models.CharField(max_length=50, verbose_name='Nombre trabajador')
-    email = models.CharField(max_length=50, verbose_name='Email trabajador')
+    email = models.CharField(primary_key=True, max_length=50, verbose_name='Email trabajador')
     contra = models.CharField(max_length=50, verbose_name='Contra trabajador')
 
     def __str__(self):

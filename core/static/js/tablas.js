@@ -53,7 +53,6 @@
 
 //Controlador tabla trabajador
 function generarTablaTrabajador(){
-    console.log("INICIANDO PROCESO DE CRACIÓN DE TABLA...")
     //Obtener el número de trabajadores
     var nTrabajadores = 10;
     //Obtener la instancia de la tabla donde se incertaran los datos
@@ -97,8 +96,6 @@ function generarTablaTrabajador(){
 
     //Asignar 'tabla' al contenedor
     contenderoTabla.innerHTML = tabla;
-
-    console.log("PROCESO FINALIZADO")
 }
 //Carga los datos automáticamente al iniciar la vista
 window.onload = generarTablaTrabajador();
@@ -114,8 +111,6 @@ window.onload = generarTablaTrabajador();
 
 // (1)
 function setTiposAutos(){
-    console.log("INICIANDO API AUTOS...");
-
     //Obtener los tipos
     let tipos = ["car", "truck", "bus"];
     

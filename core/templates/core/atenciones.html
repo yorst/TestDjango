@@ -3,66 +3,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% bootstrap_css %}
-    {% bootstrap_javascript jquery='full' %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'js/validaciones.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">        -->
-    <!-- <script src="../static/js/validaciones.js"></script> -->
-    <title>Nuestro trabajo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{% static 'js/validaciones.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">        -->
+  <!-- <script src="../static/js/validaciones.js"></script> -->
+  <title>Nuestro trabajo</title>
 </head>
 <body>
-    <div class="container-fluid">
-      <div class="row" id="header">
-        <div class="col-3" id="colLogo">
-            <!-- logo -->
-            <img src="https://cdn.discordapp.com/attachments/830083358176444490/832087641126207498/rasho.jpg" alt="Logo rayo mc Queen" id="logoMC">
-        </div>
-        <div class="col-9" id="menubar">
-            <!-- menubar -->
-              <nav class="navbar navbar-expand-lg navbar-light bg-light" id=navbar>
-                <a class="navbar-brand" href="#" id="opcion"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="atenciones.html">Nuestro trabajo</a>
-                    </li>
-                    <li class="nav-item">
-                      <button type="button" id="btnFloatingW" class="btn btn-primary"data-toggle="modal" data-target="#loginModal" data-whatever="@mdo">Login</button>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                  </form>
-                </div>
-              </nav>
-        </div>
+  <div class="container-fluid">
+    <div class="row" id="header">
+      <div class="col-3" id="colLogo">
+          <!-- logo -->
+          <img src="https://cdn.discordapp.com/attachments/830083358176444490/832087641126207498/rasho.jpg" alt="Logo rayo mc Queen" id="logoMC">
+      </div>
+      <div class="col-9" id="menubar">
+          <!-- menubar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id=navbar>
+              <a class="navbar-brand" href="#" id="opcion"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="atenciones.html">Nuestro trabajo</a>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" id="btnFloatingW" class="btn btn-primary"data-toggle="modal" data-target="#loginModal" data-whatever="@mdo">Login</button>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+              </div>
+            </nav>
+      </div>
+  </div>
+  <div class="row" id="opciones">
+    <div class="col-3">
+        <button type="button" id="btnFloatingW" class="btn btn-primary"data-toggle="modal" data-target="#atencionModal" data-whatever="@mdo">Agregar Atención</button>
     </div>
-        <div class="row" id="opciones">
-            <div class="col-3">
-              <button type="button" id="btnFloatingW" class="btn btn-primary"data-toggle="modal" data-target="#atencionModal" data-whatever="@mdo">Agregar Atención</button>
-            </div>
-            <div class="col-3">
-                <a href="">Filtrar Mecanico</a>
-            </div>
-            <div class="col-3">
-                <a href="">Filtrar Categoria</a>
-            </div>
-            <div class="col-6">
-            </div>
-        </div>
+    <div class="col-3">
+      <a href="">Filtrar Mecanico</a>
+    </div>
+    <div class="col-3">
+      <a href="">Filtrar Categoria</a>
+    </div>
+    <div class="col-6">
+    </div>
+  </div>
         
 
         <!-- <button id="btnCargar" onclick='generarTablaTrabajador();'>Cargar datos</button> -->
@@ -70,36 +70,60 @@
         <!-- inicio atenciones  -->
         <!--https://www.youtube.com/watch?v=dOhfuLnWvpU-->
         <!--https://www.youtube.com/watch?v=fI-VZwIFtwI-->
-        <table class=".tablesorter" id="atenciones" cellspacing="0px" bgcolor="ffffff" cellpadding="10px 0px 0px 0p" border="1" width="100%" style="margin:50px 50px 0px 0px">
-          <thead>
-            <tr>
-              <th>Imagén</th>
-              <th>Nombre Mecánico</th>
-              <th>Descripción</th>
-              <th>Fecha</th>
-            </tr>
-          </thead>
-          <tbody id="contenedorTablaTrabajadores">
-            <!--En este espacio contendrá la tabla generada-->
-          </tbody>
-        </table>
-        
-        <!-- footer -->
-        <div class="footer-basic" id="footer">
-          <footer>
-            <!-- <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div> -->
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#">Instagram</a></li>
-              <li class="list-inline-item"><a href="#">Facebook</a></li>
-              <li class="list-inline-item"><a href="#">Acerca de Nosotros</a></li>
-              <li class="list-inline-item"><a href="#">Terminos y Condiciones</a></li>
-              <button type="button" id="btnFloatingW" class="btn btn-primary" data-toggle="modal" data-target="#contactoModal" data-whatever="@mdo">Formulario Contacto</button>
-          
-            </ul>
-            <p class="copyright">Rayo McQueen Ltda © 2021</p>
-          </footer>
-        </div>
-  </div>
+      
+  <table class=".tablesorter" id="atenciones" cellspacing="0px" bgcolor="ffffff" cellpadding="10px 0px 0px 0p" border="1" width="100%" style="margin:50px 50px 0px 0px">
+    <thead>
+    <!-- <tr> -->
+      <th>Titulo</th>
+      <th>Imagén</th>
+      <th>Tipo auto</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Tipo atención</th>
+      <!-- <th>Nombre mecanico</th> -->
+      <th>Descripción</th>
+      <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody id="contenedorTablaTrabajadores2">
+      <!--INSERTAR CONTENIDO DE LA BD-->
+      {% for a in atenciones  %}
+      <tr> 
+        <td>{{a.titulo}}</td> 
+        <td>
+          <a href='detalleTrabajo.html'><img src='https://picsum.photos/100/100' alt='foto atencion'></a> <!--{{a.imagen}}-->
+        </td>
+        <td>{{a.tipo_vehiculo}}</td> 
+        <td>{{a.marca}}</td> 
+        <td>{{a.modelo}}</td> 
+        <td>{{a.tipo_atencion}}</td> 
+          <!-- <td>{{a.mecanico}}</td>  -->
+          <td>{{a.descripcion}}</td> 
+          <td>{{a.fecha}}</td> 
+          </tr>
+          {% endfor %}
+    </tbody>
+        <!-- <tbody id="contenedorTablaTrabajadores"> -->
+          <!--En este espacio contendrá la tabla generada-->
+        <!-- </tbody> -->
+  </table>
+
+    <!-- footer -->
+    <div class="footer-basic" id="footer">
+      <footer>
+        <!-- <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div> -->
+        <ul class="list-inline">
+         <li class="list-inline-item"><a href="#">Instagram</a></li>
+         <li class="list-inline-item"><a href="#">Facebook</a></li>
+         <li class="list-inline-item"><a href="#">Acerca de Nosotros</a></li>
+         <li class="list-inline-item"><a href="#">Terminos y Condiciones</a></li>
+           <button type="button" id="btnFloatingW" class="btn btn-primary" data-toggle="modal" data-target="#contactoModal" data-whatever="@mdo">Formulario Contacto</button>
+        </ul>
+        <p class="copyright">Rayo McQueen Ltda © 2021</p>
+      </footer>
+    </div>
+  <!-- </div> -->
+
 
   <!-- Agregar Atención -->
   <div class="modal fade" id="atencionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -157,8 +181,9 @@
             </table>
             </div>
             
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Tipo de atención</label>
+            <!--TIPO ATENCIÓN-->
+            <div class="form-group"> 
+              <label for="recipient-name" class="col-form-label">Tipo de atención</label> 
               <!--<input type="text" required class="form-control" id="tipoAt">-->
               <select class="col-form-label" id="tipoAt">
                 <option selected value='defaultOption'>Elige un tipo</option>
@@ -168,17 +193,37 @@
                     <option selected value='basico_neumaticopinchado'>Neumático pinchado</option>
                   </optgroup>
                   <optgroup label="Reparaciones">
+                    <option selected value='reparacion_parachoque'>Reparación</option>
                     <option selected value='reparacion_frenos'>Reparación de frenos</option>
                     <option selected value='reparacion_parachoque'>Reparación parachoques</option>
-                    <option selected value='reparacion_parachoque'>Reparacion </option>
                   </optgroup>
                   <optgroup label="Pintura">
-                    <option selected value='pintura_parachoque'>Parachoque</option>
                     <option selected value='pintura_puerta'>Puerta</option>
+                    <option selected value='pintura_parachoque'>Parachoque</option>
                     <option selected value='pintura_autocompleto'>Auto completo</option>
                   </optgroup>
               </select>
               <div class="invalid-feedback" id="errorTipo"></div>
+            </div>
+
+            <!--TIPO ATENCIÓN-->
+            <div class="form-group"> 
+              <label for="recipient-name" class="col-form-label">Mecánico</label> 
+              <!--<input type="text" required class="form-control" id="tipoAt">-->
+              <select class="col-form-label" id="nombreMecanico">
+                  <optgroup label="Elige un mecanico">
+                    <option selected value='basico_cambioaceite'>Carlos Azocar</option>
+                    <option selected value='basico_cambioneumatico'>George Padget</option>
+                    <option selected value='basico_neumaticopinchado'>José Larenas</option>
+                  </optgroup>
+              </select>
+              <div class="invalid-feedback" id="errorTipo"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Agregar imágenes</label>
+              <input type="file" required class="form-control" id="fotosAt">
+              <div class="invalid-feedback" id="errorFoto"></div>
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Descripcion</label>
@@ -314,8 +359,8 @@
     <!-- <script src="../static/js/validaciones.js"></script>
     <script src="../static/js/jquery-3.6.0.js"></script>
     <script src="../static/js/jquery.tablesorter.js"></script> -->
-    <script src="../static/js/httpRequest.js"></script>
-    <script src="../static/js/tablas.js"></script>
+  <script src="../static/js/httpRequest.js"></script>
+  <script src="../static/js/tablas.js"></script>
     <!-- <script src="../static/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script> -->
