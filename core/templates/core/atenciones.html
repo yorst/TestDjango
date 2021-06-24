@@ -1,5 +1,6 @@
 {% load static %}
 {% load bootstrap4 %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +34,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="atenciones.html">Nuestro trabajo</a>
+                    <a class="nav-link" href="{% url 'atenciones' %}">Nuestro trabajo</a>
                   </li>
                   <li class="nav-item">
                     <button type="button" id="btnFloatingW" class="btn btn-primary"data-toggle="modal" data-target="#loginModal" data-whatever="@mdo">Login</button>
@@ -71,42 +72,59 @@
         <!--https://www.youtube.com/watch?v=dOhfuLnWvpU-->
         <!--https://www.youtube.com/watch?v=fI-VZwIFtwI-->
       
-  <table class=".tablesorter" id="atenciones" cellspacing="0px" bgcolor="ffffff" cellpadding="10px 0px 0px 0p" border="1" width="100%" style="margin:50px 50px 0px 0px">
-    <thead>
-    <!-- <tr> -->
-      <th>Titulo</th>
-      <th>Imagén</th>
-      <th>Tipo auto</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Tipo atención</th>
-      <!-- <th>Nombre mecanico</th> -->
-      <th>Descripción</th>
-      <th>Fecha</th>
-        </tr>
-    </thead>
-    <tbody id="contenedorTablaTrabajadores2">
-      <!--INSERTAR CONTENIDO DE LA BD-->
-      {% for a in atenciones  %}
-      <tr> 
-        <td>{{a.titulo}}</td> 
-        <td>
-          <a href='detalleTrabajo.html'><img src='https://picsum.photos/100/100' alt='foto atencion'></a> <!--{{a.imagen}}-->
-        </td>
-        <td>{{a.tipo_vehiculo}}</td> 
-        <td>{{a.marca}}</td> 
-        <td>{{a.modelo}}</td> 
-        <td>{{a.tipo_atencion}}</td> 
+  <div>
+    <table class=".tablesorter" id="atenciones" cellspacing="0px" bgcolor="ffffff" cellpadding="10px 0px 0px 0xp" border="1" width="100%" style="margin:50px 50px 0px 0px">
+      <thead>
+      <!-- <tr> -->
+        <th>Titulo</th>
+        <th>Imagén</th>
+        <th>Tipo auto</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Tipo atención</th>
+        <!-- <th>Nombre mecanico</th> -->
+        <th>Descripción</th>
+        <th>Fecha</th>
+          </tr>
+      </thead>
+      <tbody id="contenedorTablaTrabajadores2">
+        <!--INSERTAR CONTENIDO DE LA BD-->
+        {% for a in atenciones  %}
+        <tr>
+          <td>{{a.titulo}}</td> 
+          <td>
+            <a href="{% url 'detalleTrabajo'%}"><img src='https://loremflickr.com/300/200/car' alt='foto atencion'></a> <!--{{a.imagen}}  https://picsum.photos/id/1071/200/300    https://loremflickr.com/300/200/car?random=${}-->  
+          </td>
+          <td>{{a.tipo_vehiculo}}</td> 
+          <td>{{a.marca}}</td> 
+          <td>{{a.modelo}}</td> 
+          <td>{{a.tipo_atencion}}</td> 
           <!-- <td>{{a.mecanico}}</td>  -->
           <td>{{a.descripcion}}</td> 
           <td>{{a.fecha}}</td> 
-          </tr>
-          {% endfor %}
-    </tbody>
-        <!-- <tbody id="contenedorTablaTrabajadores"> -->
-          <!--En este espacio contendrá la tabla generada-->
-        <!-- </tbody> -->
-  </table>
+        </tr>
+        {% endfor %}
+      </tbody>
+          <!-- <tbody id="contenedorTablaTrabajadores"> -->
+            <!--En este espacio contendrá la tabla generada-->
+          <!-- </tbody> -->
+    </table>
+  </div>
+
+  <!-- FORMULARIO REGISTRO -->
+  <div class="row" style="margin:50px 50px 0px 0px">
+    <form action="" method="POST" id="formularioPrueba">
+      {% csrf_token %}
+      <!-- {{ formPrueba.as_table }} -->
+      {{ formPrueba | crispy }}
+      
+      <button type="submit">Registrarse</button>
+      <span style="color:green">{{mensaje}}</span>
+      <!-- <div class="alert alert-success" role="alert">
+        {{ mensaje }}
+      </div> -->
+    </form>
+  </div>
 
     <!-- footer -->
     <div class="footer-basic" id="footer">
@@ -123,7 +141,6 @@
       </footer>
     </div>
   <!-- </div> -->
-
 
   <!-- Agregar Atención -->
   <div class="modal fade" id="atencionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -149,36 +166,36 @@
             </div>
             <div class="form-group">
               <table class=".tableselects" cellspacing="10px" bgcolor="ffffff" cellpadding="10px 0px 0px 0p" width="100%">
-              <thead>
-                <tr>
-                  <th>Tipo vehículo</th>
-                  <th>Marca vehículo</th>
-                  <th>Modelo vehículo</th>
-                </tr>
-              </thead>
-              <tbody id="contenedorTablaTrabajadores">
-                <tr>
-                  <td>
-                    <select class="col-form-label" id="selectTiposAuto" name="selectTipo">
-                      <!--En este espacio contendrá las opciones generadas-->
-                    </select>
-                    <div class="invalid-feedback" id="errorselectTipo"></div>
-                  </td>
-                  <td>
-                    <select class="col-form-label" id="selectMarcaAuto">
-                      <!--En este espacio contendrá las opciones generadas-->
-                    </select>
-                    <div class="invalid-feedback" id="errorselectMarcaAuto"></div>
-                  </td>
-                  <td>
-                    <select class="col-form-label" id="selectModeloAuto">
-                      <!--En este espacio contendrá las opciones generadas-->
-                    </select>
-                    <div class="invalid-feedback" id="errorselectModeloAuto"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                <thead>
+                  <tr>
+                    <th>Tipo vehículo</th>
+                    <th>Marca vehículo</th>
+                    <th>Modelo vehículo</th>
+                  </tr>
+                </thead>
+                <tbody id="opcionesVehiculo">
+                  <tr>
+                    <td>
+                      <select class="col-form-label" id="selectTiposAuto" name="selectTipo">
+                        <!--En este espacio contendrá las opciones generadas-->
+                      </select>
+                      <div class="invalid-feedback" id="errorselectTipo"></div>
+                    </td>
+                    <td>
+                      <select class="col-form-label" id="selectMarcaAuto">
+                        <!--En este espacio contendrá las opciones generadas-->
+                      </select>
+                      <div class="invalid-feedback" id="errorselectMarcaAuto"></div>
+                    </td>
+                    <td>
+                      <select class="col-form-label" id="selectModeloAuto">
+                        <!--En este espacio contendrá las opciones generadas-->
+                      </select>
+                      <div class="invalid-feedback" id="errorselectModeloAuto"></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             
             <!--TIPO ATENCIÓN-->
@@ -220,11 +237,13 @@
               <div class="invalid-feedback" id="errorTipo"></div>
             </div>
 
-            <div class="form-group">
+            <!-- agregar foto -->
+            <!-- <div class="form-group">
               <label for="message-text" class="col-form-label">Agregar imágenes</label>
               <input type="file" required class="form-control" id="fotosAt">
               <div class="invalid-feedback" id="errorFoto"></div>
-            </div>
+            </div> -->
+
             <div class="form-group">
               <label for="message-text" class="col-form-label">Descripcion</label>
               <textarea class="form-control" required id="descripcionAt"></textarea>
@@ -233,8 +252,7 @@
             <button type="submit" class="btn btn-primary">Subir atención</button>
           </form>
         </div>
-        <div class="modal-footer">     
-        </div>
+        <div class="modal-footer"></div>
       </div>
     </div>
   </div>

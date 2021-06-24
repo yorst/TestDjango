@@ -42,10 +42,32 @@ class Contacto(models.Model):
 
 
 
+# MODELO TRABAJADOR
+
+class Trabajador(models.Model):
+    email = models.CharField(primary_key=True, max_length=50, verbose_name='Email trabajador')
+    nombre = models.CharField(max_length=50, verbose_name='Nombre trabajador')
+    contra = models.CharField(max_length=50, verbose_name='Contra trabajador')
+
+    def __str__(self):
+        return self.email
+
+    def __str__(self):
+        return self.contra
+
+    def __str__(self):
+        return self.nombre
+    
+    def __str__(self):
+        return self.rut
+
+
 
 # MODELO ATENCIONES
 
 class Atencion(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
+    trabajador = models.ForeignKey(Trabajador, on_delete=models.CASCADE, null=True)
     titulo = models.CharField(primary_key=True, max_length=50, verbose_name='Titulo atencion')
     fecha = models.CharField(max_length=50, verbose_name='Fecha atencion')
     tipo_vehiculo = models.CharField(max_length=50, verbose_name='Tipo vehiculo atencion')
@@ -55,8 +77,6 @@ class Atencion(models.Model):
     descripcion = models.CharField(max_length=50, verbose_name='Descripcion atencion')
     # mecanico = models.CharField(max_length=50, verbose_name='Mecanico atencion')
     # imagen = models.ImageField(verbose_name='Mecanico atencion')
-    #DEBERIA IR COMO FORANEA EMAIL DE USUARIO
-    #DEBERIA IR COMO FORANEA ID DE TRABAJADOR
 
     def __str__(self):
         return self.titulo
@@ -78,23 +98,3 @@ class Atencion(models.Model):
 
     def __str__(self):
         return self.descripcion
-
-
-# MODELO TRABAJADOR
-
-class Trabajador(models.Model):
-    nombre = models.CharField(max_length=50, verbose_name='Nombre trabajador')
-    email = models.CharField(primary_key=True, max_length=50, verbose_name='Email trabajador')
-    contra = models.CharField(max_length=50, verbose_name='Contra trabajador')
-
-    def __str__(self):
-        return self.email
-
-    def __str__(self):
-        return self.contra
-
-    def __str__(self):
-        return self.nombre
-    
-    def __str__(self):
-        return self.rut

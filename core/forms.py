@@ -7,6 +7,11 @@ class ContactoForm(ModelForm):
         model = Contacto
         fields = ['email', 'nombre', 'celular', 'asunto', 'mensaje']
 
+class UsuarioForm(ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['email', 'nombre', 'contrasenha']
+
 # class PruebaForm(ModelForm):
 #     class Meta:
 #         model = Contacto
