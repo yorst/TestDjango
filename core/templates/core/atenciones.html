@@ -93,7 +93,7 @@
         <tr>
           <td>{{a.titulo}}</td> 
           <td>
-            <a href="{% url 'detalleTrabajo'%}"><img src='https://loremflickr.com/300/200/car' alt='foto atencion'></a> <!--{{a.imagen}}  https://picsum.photos/id/1071/200/300    https://loremflickr.com/300/200/car?random=${}-->  
+            <a href="{% url 'detalleTrabajo'%}"><img src='https://loremflickr.com/300/200/ferrari,lamborgini,audi' alt='foto atencion'></a> <!--{{a.imagen}}  https://picsum.photos/id/1071/200/300    https://loremflickr.com/300/200/car?random=${}-->  
           </td>
           <td>{{a.tipo_vehiculo}}</td> 
           <td>{{a.marca}}</td> 
@@ -105,42 +105,24 @@
         </tr>
         {% endfor %}
       </tbody>
-          <!-- <tbody id="contenedorTablaTrabajadores"> -->
-            <!--En este espacio contendrá la tabla generada-->
-          <!-- </tbody> -->
     </table>
   </div>
 
-  <!-- FORMULARIO REGISTRO -->
-  <div class="row" style="margin:50px 50px 0px 0px">
-    <form action="" method="POST" id="formularioPrueba">
-      {% csrf_token %}
-      <!-- {{ formPrueba.as_table }} -->
-      {{ formPrueba | crispy }}
-      
-      <button type="submit">Registrarse</button>
-      <span style="color:green">{{mensaje}}</span>
-      <!-- <div class="alert alert-success" role="alert">
-        {{ mensaje }}
-      </div> -->
-    </form>
+  <!-- footer -->
+  <div class="footer-basic" id="footer">
+    <footer>
+      <!-- <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div> -->
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Instagram</a></li>
+        <li class="list-inline-item"><a href="#">Facebook</a></li>
+        <li class="list-inline-item"><a href="#">Acerca de Nosotros</a></li>
+        <li class="list-inline-item"><a href="#">Terminos y Condiciones</a></li>
+          <button type="button" id="btnFloatingW" class="btn btn-primary" data-toggle="modal" data-target="#contactoModal" data-whatever="@mdo">Formulario Contacto</button>
+      </ul>
+      <p class="copyright">Rayo McQueen Ltda © 2021</p>
+    </footer>
   </div>
 
-    <!-- footer -->
-    <div class="footer-basic" id="footer">
-      <footer>
-        <!-- <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div> -->
-        <ul class="list-inline">
-         <li class="list-inline-item"><a href="#">Instagram</a></li>
-         <li class="list-inline-item"><a href="#">Facebook</a></li>
-         <li class="list-inline-item"><a href="#">Acerca de Nosotros</a></li>
-         <li class="list-inline-item"><a href="#">Terminos y Condiciones</a></li>
-           <button type="button" id="btnFloatingW" class="btn btn-primary" data-toggle="modal" data-target="#contactoModal" data-whatever="@mdo">Formulario Contacto</button>
-        </ul>
-        <p class="copyright">Rayo McQueen Ltda © 2021</p>
-      </footer>
-    </div>
-  <!-- </div> -->
 
   <!-- Agregar Atención -->
   <div class="modal fade" id="atencionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -178,6 +160,11 @@
                     <td>
                       <select class="col-form-label" id="selectTiposAuto" name="selectTipo">
                         <!--En este espacio contendrá las opciones generadas-->
+                        <optgroup label="Autos aceptados">
+                          <option selected value='basico_cambioaceite'>Ferrari</option>
+                          <option selected value='basico_cambioneumatico'>Lamborghini</option>
+                          <option selected value='basico_neumaticopinchado'>Bugatti</option>
+                        </optgroup>
                       </select>
                       <div class="invalid-feedback" id="errorselectTipo"></div>
                     </td>
@@ -280,31 +267,21 @@
             <hr>
             <div class="row">
 
-              <!-- Registrarse -->
-              <div class="col-6">
-                <form action="" method="POST" id="formReg">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Nombre</label>
-                    <input type="text" required class="form-control" id="nombreReg">
-                    <div class="invalid-feedback" id="errorNombre"></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Correo Electrónico</label>
-                    <input type="email" required class="form-control" id="correoReg">
-                    <div class="invalid-feedback" id="errorEmail"></div>
-
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Constraseña</label>
-                    <input type="password" required class="form-control" id="contraReg">
-                    <div class="invalid-feedback" id="errorPass"></div>
-
-                  </div>
-                  <button class="btn btn-primary" type="submit" id="btnReg">Registrarse</button>
-                </form>  
+              <!-- FORMULARIO REGISTRO -->
+              <div class="form-group" style="margin:0px 20px 0px 20px">
+                <form action="" method="POST" id="formularioPrueba">
+                  {% csrf_token %}
+                  <!-- {{ formPrueba.as_table }} -->
+                  {{ formPrueba | crispy }}
+                  <button class="btn btn-primary" type="submit">Registrarse</button>
+                  <span style="color:green">{{mensaje}}</span>
+                  <!-- <div class="alert alert-success" role="alert">
+                    {{ mensaje }}
+                  </div> -->
+                </form>
               </div>
 
-              <!-- inicio sesion -->
+              <!-- FORMULARIO INICIO -->
               <div class="col-6">
                 <form action="" method="POST" id="formLog">
                   <div class="form-group">
@@ -316,7 +293,6 @@
                     <label for="contraLog" class="col-form-label">Contraseña</label>
                     <input type="password" required class="form-control" id="contraLog">
                     <div class="invalid-feedback" id="errorPassL"></div>
-
                   </div>                
                   <button class="btn btn-primary" type="submit" id="btnLog">Iniciar Sesión</button>
                 </form>
@@ -377,7 +353,9 @@
     <!-- <script src="../static/js/validaciones.js"></script>
     <script src="../static/js/jquery-3.6.0.js"></script>
     <script src="../static/js/jquery.tablesorter.js"></script> -->
-  <script src="../static/js/httpRequest.js"></script>
+  <!-- <script src="../static/js/httpRequest.js"></script>
+  <script src="../static/js/tablas.js"></script> -->
+  <script src="{% static 'js/httpRequest.js' %}"></script>
   <script src="../static/js/tablas.js"></script>
     <!-- <script src="../static/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -5,7 +5,21 @@ from core.forms import UsuarioForm
 # Create your views here.
 
 def index(request):
-    return render(request,'core/index.html')
+
+    datos = {
+        'formPrueba': UsuarioForm()
+    }
+
+    if request.method == 'POST':
+        formularioPrueba = UsuarioForm(request.POST)
+        #if validacionUsuarioNuevo(formularioPrueba.email, formularioPrueba.contrasenha, formularioPrueba.nombre):
+        if formularioPrueba.is_valid:
+            formularioPrueba.save()
+            datos['mensaje'] = "registro exitoso"
+        else:
+            datos['mensaje'] = "formulario no encontrado"
+
+    return render(request,'core/index.html', datos)
 
 def atenciones(request):
     atencion = Atencion.objects.all()
@@ -28,7 +42,19 @@ def atenciones(request):
     return render(request,'core/atenciones.html', datos)
 
 def detalleTrabajo(request):
-    return render(request,'core/detalleTrabajo.html')
+    datos = {
+        'formPrueba': UsuarioForm()
+    }
+
+    if request.method == 'POST':
+        formularioPrueba = UsuarioForm(request.POST)
+        #if validacionUsuarioNuevo(formularioPrueba.email, formularioPrueba.contrasenha, formularioPrueba.nombre):
+        if formularioPrueba.is_valid:
+            formularioPrueba.save()
+            datos['mensaje'] = "registro exitoso"
+        else:
+            datos['mensaje'] = "formulario no encontrado"
+    return render(request,'core/detalleTrabajo.html',datos)
 
 def validacionUsuarioNuevo(email, contraseña, nombre):
     if len(contraseña) > 4 and len(nombre) > 3:
