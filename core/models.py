@@ -68,7 +68,8 @@ class Trabajador(models.Model):
 class Atencion(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
     trabajador = models.ForeignKey(Trabajador, on_delete=models.CASCADE, null=True)
-    titulo = models.CharField(primary_key=True, max_length=50, verbose_name='Titulo atencion')
+    idAt = models.CharField(primary_key=True, max_length=40, verbose_name='Id')
+    titulo = models.CharField(max_length=50, verbose_name='Titulo atencion')
     fecha = models.CharField(max_length=50, verbose_name='Fecha atencion')
     tipo_vehiculo = models.CharField(max_length=50, verbose_name='Tipo vehiculo atencion')
     marca = models.CharField(null=True, blank=True, max_length=50, verbose_name='Marca atencion')
@@ -78,23 +79,26 @@ class Atencion(models.Model):
     # mecanico = models.CharField(max_length=50, verbose_name='Mecanico atencion')
     # imagen = models.ImageField(verbose_name='Mecanico atencion')
 
-    def __str__(self):
+    def str(self):
+        return self.idAt
+
+    def str(self):
         return self.titulo
 
-    def __str__(self):
+    def str(self):
         return self.fecha
 
-    def __str__(self):
+    def str(self):
         return self.tipo_vehiculo
-    
-    def __str__(self):
+
+    def str(self):
         return self.marca
 
-    def __str__(self):
+    def str(self):
         return self.modelo
 
-    def __str__(self):
+    def str(self):
         return self.tipo_atencion
 
-    def __str__(self):
+    def str(self):
         return self.descripcion

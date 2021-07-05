@@ -28,5 +28,6 @@ urlpatterns = [
     path('', include('core.urls')),
     path('atenciones/',include('core.urls')),
     path('detalleTrabajo/',include('core.urls')),
-    path('index/',include('core.urls'))
+    path('index/',include('core.urls')),
+    path('modificarAtencion/',include('core.urls'))
 ]

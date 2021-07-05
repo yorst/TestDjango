@@ -77,3 +77,6 @@ def validacionUsuarioNuevo(email, contraseña, nombre):
         return (match_body is not None) and (match_domain is not None)
     else:
         return false
+
+def modificarAtencion(request):
+    return render(request, 'core/modificarAtencion.html')

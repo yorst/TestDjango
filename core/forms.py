@@ -12,7 +12,7 @@ class UsuarioForm(ModelForm):
         model = Usuario
         fields = ['email', 'nombre', 'contrasenha']
 
-# class PruebaForm(ModelForm):
-#     class Meta:
-#         model = Contacto
-#         fields = ['email', 'nombre', 'celular', 'asunto', 'mensaje']
+class ModificarForm(ModelForm):
+    class Meta:
+        model = Atencion
+        fields = ['idAt','titulo','fecha','tipo_vehiculo','marca','modelo','tipo_atencion','descripcion','trabajador','usuario']
