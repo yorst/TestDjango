@@ -19,5 +19,5 @@ urlpatterns = [
     path('index.html/', views.index, name="index"),
     path('atenciones.html/', views.atenciones, name="atenciones"),
     path('atenciones.html/detalleTrabajo.html/', views.detalleTrabajo, name="detalleTrabajo"),
-    path('atenciones.html/modificarAtencion.html/', views.modificarAtencion, name="modificarAtencion")
+    path('index/atenciones.html/modificarAtencion.html/<id>', views.modificarAtencion, name="modificarAtencion")
 ]

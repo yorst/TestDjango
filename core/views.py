@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Atencion, Contacto, Usuario, Trabajador
-from core.forms import UsuarioForm
+from core.forms import UsuarioForm, ModificarForm
 
 # Create your views here.
 
@@ -78,5 +78,9 @@ def validacionUsuarioNuevo(email, contraseña, nombre):
     else:
         return false
 
-def modificarAtencion(request):
-    return render(request, 'core/modificarAtencion.html')
+def modificarAtencion(request, id):
+    atencion = Atencion.objects.get(idAt=id)
+    datos={
+        'modificarAtencion': ModificarForm(instance=atencion)
+    }
+    return render(request, 'core/modificarAtencion.html',datos)
