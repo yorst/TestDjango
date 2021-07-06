@@ -5,6 +5,7 @@ from .views import index
 from .views import atenciones
 from .views import detalleTrabajo
 from .views import modificarAtencion
+from .views import deleteAtencion
 # from  TestDjango import views
 
 urlpatterns = [
@@ -19,5 +20,6 @@ urlpatterns = [
     path('index.html/', views.index, name="index"),
     path('atenciones.html/', views.atenciones, name="atenciones"),
     path('atenciones.html/detalleTrabajo.html/', views.detalleTrabajo, name="detalleTrabajo"),
-    path('index/atenciones.html/modificarAtencion.html/<id>', views.modificarAtencion, name="modificarAtencion")
+    path('index/atenciones.html/modificarAtencion.html/<id>', views.modificarAtencion, name="modificarAtencion"),
+    path('deleteAtencion.html/<id>', views.deleteAtencion, name="deleteAtencion")
 ]

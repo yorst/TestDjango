@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Atencion, Contacto, Usuario, Trabajador
 from core.forms import UsuarioForm, ModificarForm
 
 # Create your views here.
 
 def index(request):
-
     datos = {
         'formPrueba': UsuarioForm()
     }
@@ -83,4 +82,17 @@ def modificarAtencion(request, id):
     datos={
         'modificarAtencion': ModificarForm(instance=atencion)
     }
+    if (request.method == 'POST'):
+        formulario = ModificarForm(data=request.POST,instance=atencion)
+        if formulario.is_valid():
+            formulario.save()
+            datos['mensaje']="Datos modificados exitosamente"
+
     return render(request, 'core/modificarAtencion.html',datos)
+
+
+
+def deleteAtencion(request, id):
+    atencion = Atencion.objects.get(idAt=id)
+    atencion.delete()
+    return redirect(to:="atenciones")
