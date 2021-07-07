@@ -30,5 +30,6 @@ urlpatterns = [
     path('detalleTrabajo/',include('core.urls')),
     path('index/',include('core.urls')),
     path('modificarAtencion/<id>',include('core.urls')),
-    path('deleteAtencion/',include('core.urls'))
+    path('deleteAtencion/',include('core.urls')),
+    path('api/',include('restAtencion.urls')),
 ]

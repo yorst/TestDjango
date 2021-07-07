@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     #libreria terceros
     'bootstrap4',
     'crispy_forms',
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
     #miApp
     'core',
+    'restAtencion',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
